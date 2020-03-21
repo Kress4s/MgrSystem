@@ -42,7 +42,7 @@ export default {
     return {
       LoginForm: {
         username: 'admin',
-        password: '123'
+        password: '123456'
       },
       LoginFormRules: {
         // 设置输入规则
@@ -59,9 +59,21 @@ export default {
   methods: {
     // 点击登录按钮前，再次进行数据格式的验证，再发起请求 validate bool
     login () {
-      // 登录前预校验
-      this.$refs.loginFormRef.validate(valid => {
+      // 登录前预校验 返回的Promise结构，使用异步获取(async + await)
+      this.$refs.loginFormRef.validate(async valid => {
         if (!valid) return false
+        // 解析出返回的data数据
+        // message消息提示
+        const { data: res } = await this.$http.post('login', this.LoginForm)
+        if (res.meta.status !== 200) return this.$message.error('登录失败')
+        // 把token保存到seesionStorage(默认有效时间)
+        window.sessionStorage.setItem('token', res.data.token)
+        this.$message({
+          message: '登陆成功',
+          type: 'success'
+        })
+        // 通过编程式跳转到后台主页， /home
+        this.$router.push('/home')
       })
     }
   }
