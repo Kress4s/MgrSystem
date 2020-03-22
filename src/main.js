@@ -13,6 +13,12 @@ import './assets/index.css'
 // axios的配置
 import axios from 'axios'
 axios.defaults.baseURL = 'http://106.12.11.162:8888/api/private/v1/'
+// 所有接口验证token，请求拦截器，除了登录接口
+axios.interceptors.request.use(config => {
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  // 最后必须返回config对象
+  return config
+})
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false

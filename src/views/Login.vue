@@ -3,7 +3,7 @@
     <div class="LoginBox">
       <!-- 头像区域 -->
       <div class="imgContain">
-        <img src="../assets/logo.png" alt />
+        <img src="../assets/Company.png" alt />
       </div>
       <!-- 文本区域 -->
       <el-form
@@ -106,7 +106,6 @@ export default {
 .imgContain {
   width: 130px;
   height: 130px;
-  background-color: pink;
   padding: 10px;
   background-color: #fff;
   border-radius: 50%;
