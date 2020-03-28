@@ -1,5 +1,5 @@
 # MgrSystem
-A system for web 
+A manager system for web written by Vue.js 
 
 ## Project setup
 ```
