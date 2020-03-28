@@ -20,7 +20,10 @@ import {
   Col,
   Table,
   TableColumn,
-  Switch
+  Switch,
+  Pagination,
+  Dialog,
+  MessageBox
 } from 'element-ui'
 
 Vue.use(Button)
@@ -43,6 +46,10 @@ Vue.use(Col)
 Vue.use(Table)
 Vue.use(TableColumn)
 Vue.use(Switch)
+Vue.use(Pagination)
+Vue.use(Dialog)
 
 // Message 需要全局挂载
 Vue.prototype.$message = Message
+// 挂载messageBox
+Vue.prototype.$confirm = MessageBox.confirm
