@@ -23,6 +23,18 @@ Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
+// 注册vue全局时间格式化过滤器(全局使用)
+Vue.filter('timeFormat', function (timeStr) {
+  var ts = new Date(timeStr)
+  var Y = ts.getFullYear()
+  var M = ts.getMonth()
+  var d = ts.getDay()
+  var h = ts.getHours()
+  var m = ts.getMinutes()
+  var s = ts.getSeconds()
+  return `${Y}-${M}-${d} ${h}:${m}:${s}`
+})
+
 new Vue({
   router,
   // store,
