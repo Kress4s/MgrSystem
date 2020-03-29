@@ -7,6 +7,7 @@ import Users from '../views/user/Users.vue'
 import Roles from '../views/rights/Roles.vue'
 import RightsList from '../views/rights/RightsList.vue'
 import GoodsList from '../views/goods/GoodsList.vue'
+import Categories from '../views/goods/Categories.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -17,11 +18,16 @@ const routes = [
     component: Home,
     redirect: '/home/welcome',
     children: [
+      // 首页
       { path: 'welcome', component: Welcome },
+      // 用户管理
       { path: 'users', component: Users },
+      // 权限管理
       { path: 'roles', component: Roles },
       { path: 'rights', component: RightsList },
-      { path: 'goods', component: GoodsList }
+      // 商品管理
+      { path: 'goods', component: GoodsList },
+      { path: 'categories', component: Categories }
     ]
   }
 ]

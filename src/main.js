@@ -10,6 +10,9 @@ import './assets/index.css'
 
 // 引入图标样式
 
+// 使用treeTable
+import ZkTable from 'vue-table-with-tree-grid'
+
 // axios的配置
 import axios from 'axios'
 axios.defaults.baseURL = 'http://106.12.11.162:8888/api/private/v1/'
@@ -34,6 +37,9 @@ Vue.filter('timeFormat', function (timeStr) {
   var s = ts.getSeconds()
   return `${Y}-${M}-${d} ${h}:${m}:${s}`
 })
+
+// 全局注册treeTable
+Vue.component(ZkTable.name, ZkTable)
 
 new Vue({
   router,
