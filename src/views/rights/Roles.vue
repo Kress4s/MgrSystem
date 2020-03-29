@@ -7,7 +7,7 @@
     </el-breadcrumb>
     <el-card class="box-card">
       <el-button type="primary" @click="addDialogVisible = true">添加角色</el-button>
-      <el-table :data="rolesList" style="width: 100%" border>
+      <el-table :data="rolesList" stripe style="width: 100%" border>
         <el-table-column type="index" width="50" label="#"></el-table-column>
         <el-table-column label="角色名称" prop="roleName"></el-table-column>
         <el-table-column label="角色描述" prop="roleDesc"></el-table-column>
@@ -159,5 +159,6 @@ export default {
 <style lang="scss" scoped>
 .el-table {
   margin-top: 15px;
+  font-size: 12px;
 }
 </style>
