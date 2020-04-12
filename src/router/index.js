@@ -10,6 +10,7 @@ import GoodsList from '../views/goods/GoodsList.vue'
 import Categories from '../views/goods/Categories.vue'
 import Params from '../views/goods/Params.vue'
 import Orders from '../views/order/Order.vue'
+import Report from '../views/report/Report.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -32,7 +33,9 @@ const routes = [
       { path: 'categories', component: Categories },
       { path: 'params', component: Params },
       // 订单管理
-      { path: 'orders', component: Orders }
+      { path: 'orders', component: Orders },
+      // 数据报表
+      { path: 'reports', component: Report }
     ]
   }
 ]
