@@ -119,7 +119,6 @@ export default {
     async getOneRoleInfo (roleid) {
       const { data: res } = await this.$http.get('roles/' + roleid)
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
-      console.log(res.data)
       this.editRoleForm = res.data
     },
     showEditDailog (roleid) {

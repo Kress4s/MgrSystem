@@ -1,3 +1,4 @@
+// 开发阶段的打包入口
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -6,7 +7,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './plugins/element.js'
 
 // 引入全局样式
-import './assets/index.css'
+import './assets/global.css'
 
 // 引入图标样式
 
@@ -41,11 +42,11 @@ Vue.config.productionTip = false
 Vue.filter('timeFormat', function (timeStr) {
   var ts = new Date(timeStr)
   var Y = ts.getFullYear()
-  var M = ts.getMonth()
-  var d = ts.getDay()
-  var h = ts.getHours()
-  var m = ts.getMinutes()
-  var s = ts.getSeconds()
+  var M = (ts.getMonth() + 1 + '').padStart(2, '0')
+  var d = (ts.getDate() + '').padStart(2, '0')
+  var h = (ts.getHours() + '').padStart(2, '0')
+  var m = (ts.getMinutes() + '').padStart(2, '0')
+  var s = (ts.getSeconds() + '').padStart(2, '0')
   return `${Y}-${M}-${d} ${h}:${m}:${s}`
 })
 

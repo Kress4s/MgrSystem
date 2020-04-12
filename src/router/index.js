@@ -1,16 +1,35 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../views/Login.vue'
-import Home from '../views/Home.vue'
-import Welcome from '../views/Welcome.vue'
-import Users from '../views/user/Users.vue'
-import Roles from '../views/rights/Roles.vue'
-import RightsList from '../views/rights/RightsList.vue'
-import GoodsList from '../views/goods/GoodsList.vue'
-import Categories from '../views/goods/Categories.vue'
-import Params from '../views/goods/Params.vue'
-import Orders from '../views/order/Order.vue'
-import Report from '../views/report/Report.vue'
+
+// import Login from '../views/Login.vue'
+// import Home from '../views/Home.vue'
+// import Welcome from '../views/Welcome.vue'
+// 路由懒加载
+const Home = () => import(/* webpackChunkName: "login_home_welcome" */ '../views/Home.vue')
+const Login = () => import(/* webpackChunkName: "login_home_welcome" */ '../views/Login.vue')
+const Welcome = () => import(/* webpackChunkName: "login_home_welcome" */ '../views/Welcome.vue')
+
+// import Users from '../views/user/Users.vue'
+// import Roles from '../views/rights/Roles.vue'
+// import RightsList from '../views/rights/RightsList.vue'
+// 路由懒加载
+const Users = () => import(/* webpackChunkName: "users_rightList_roles" */ '../views/user/Users.vue')
+const Roles = () => import(/* webpackChunkName: "users_rightList_roles" */ '../views/rights/Roles.vue')
+const RightsList = () => import(/* webpackChunkName: "users_rightList_roles" */ '../views/rights/RightsList.vue')
+
+// import GoodsList from '../views/goods/GoodsList.vue'
+// import Categories from '../views/goods/Categories.vue'
+// import Params from '../views/goods/Params.vue'
+// 路由懒加载
+const GoodsList = () => import(/* webpackChunkName: "goods_cate_params" */ '../views/goods/GoodsList.vue')
+const Categories = () => import(/* webpackChunkName: "goods_cate_params" */ '../views/goods/Categories.vue')
+const Params = () => import(/* webpackChunkName: "goods_cate_params" */ '../views/goods/Params.vue')
+
+// import Orders from '../views/order/Order.vue'
+// import Report from '../views/report/Report.vue'
+// 路由懒加载
+const Orders = () => import(/* webpackChunkName: "orders_report" */ '../views/order/Order.vue')
+const Report = () => import(/* webpackChunkName: "orders_report" */ '../views/report/Report.vue')
 Vue.use(VueRouter)
 
 const routes = [

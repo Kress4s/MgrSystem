@@ -146,7 +146,6 @@ export default {
       const { data: res } = await this.$http.get('categories')
       if (res.meta.status !== 200) return this.$message.error('获取商品分类失败')
       this.catelist = res.data
-      console.log(this.catelist)
     },
 
     // 级联选择框选中项变化会触发
@@ -166,7 +165,6 @@ export default {
         return
       }
       // 只能选择三级分类
-      console.log(this.selectCateKeys)
       // 根据所选的分类的id，和当前所处的面板，获取对应的参数
       const { data: res } = await this.$http.get(`categories/${this.cateID}/attributes`, { params: { sel: this.activeName } })
       if (res.meta.status !== 200) return this.$message.error('获取参数列表失败')
